@@ -59,6 +59,7 @@ class ViewController: UIViewController {
             }else{
                 currentVal = "Error";
             }
+            readyToAcceptNewNumber = true;
         default:
             break;
         }
