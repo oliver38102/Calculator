@@ -54,7 +54,11 @@ class ViewController: UIViewController {
             readyToAcceptNewNumber = true;
         case "=":
             calculations.secondNumber = Double(currentVal)
-            var result = calculations.calculateResult()
+            if let result = calculations.calculateResult(){
+                currentVal = String(result)
+            }else{
+                currentVal = "Error";
+            }
         default:
             break;
         }
