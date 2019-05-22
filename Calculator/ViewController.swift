@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //MARK: - Outlets
     
     var calculations = Calculations();
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     //MARK: - event listeners
     @IBAction func buttonPressed(_ sender: UIButton) {
         print("\(sender.currentTitle ?? "Nil")" + "  pressed");
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         case "=":
             calculations.secondNumber = Double(currentVal)
             if let result = calculations.calculateResult(){
-                currentVal = String(result)
+                currentVal = String(format:"%g", result)
             }else{
                 currentVal = "Error";
             }
@@ -67,4 +67,3 @@ class ViewController: UIViewController {
     }
     
 }
-
