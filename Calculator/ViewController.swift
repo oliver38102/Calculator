@@ -42,16 +42,28 @@ class ViewController: UIViewController {
             }else{
                 currentVal = currentVal+sender.currentTitle!;
             }
-        case "c":
+        case "C":
             currentVal = "0";
         case ".":
             if(!currentVal.contains(".")){
                 currentVal.append(".");
             }
         case "+":
-            calculations.operation = sender.currentTitle!
-            calculations.firstNumber = Double(currentVal)
-            readyToAcceptNewNumber = true;
+            if(calculations.firstNumber != nil){
+                calculations.secondNumber = Double(currentVal)
+                if let result = calculations.calculateResult(){
+                    currentVal = String(format:"%g", result)
+                    calculations.firstNumber = result
+                    calculations.secondNumber = nil
+                }else{
+                    currentVal = "Error";
+                }
+                readyToAcceptNewNumber = true;
+            }else{
+                calculations.operation = sender.currentTitle!
+                calculations.firstNumber = Double(currentVal)
+                readyToAcceptNewNumber = true;
+            }
         case "=":
             calculations.secondNumber = Double(currentVal)
             if let result = calculations.calculateResult(){

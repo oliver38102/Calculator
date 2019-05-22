@@ -23,6 +23,7 @@ class Calculations {
                     switch(operation){
                     case "+":
                         return firstNumber! + secondNumber!
+                        
                     default: return nil
                     }
                 }else{
