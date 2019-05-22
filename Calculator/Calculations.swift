@@ -23,8 +23,14 @@ class Calculations {
                     switch(operation){
                     case "+":
                         return firstNumber! + secondNumber!
-                        
-                    default: return nil
+                    case "-":
+                        return firstNumber! - secondNumber!
+                    case "/":
+                        return firstNumber! / secondNumber!
+                    case "*":
+                        return firstNumber! * secondNumber!
+                    default:
+                        return nil
                     }
                 }else{
                     return firstNumber
@@ -35,5 +41,12 @@ class Calculations {
         }else{
             return nil
         }
+    }
+    
+    func reset(){
+        firstNumber = nil;
+        secondNumber = nil;
+        operation = nil;
+        
     }
 }

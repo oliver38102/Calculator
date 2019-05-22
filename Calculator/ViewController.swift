@@ -44,11 +44,12 @@ class ViewController: UIViewController {
             }
         case "C":
             currentVal = "0";
+            calculations.reset();
         case ".":
             if(!currentVal.contains(".")){
                 currentVal.append(".");
             }
-        case "+":
+        case "+", "-", "*", "/":
             if(calculations.firstNumber != nil){
                 calculations.secondNumber = Double(currentVal)
                 if let result = calculations.calculateResult(){
